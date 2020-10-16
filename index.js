@@ -28,8 +28,10 @@ app.get('/',(req, res)=>{
 })
 
 //database connect
-const uri = "mongodb+srv://creativeAgency:adgjmptw499@cluster0.oawso.mongodb.net/creative-agency?retryWrites=true&w=majority";
+/* const uri = "mongodb+srv://creativeAgency:adgjmptw499@cluster0.oawso.mongodb.net/creative-agency?retryWrites=true&w=majority";
+ */
 const client = new MongoClient(uri, { useNewUrlParser: true,useUnifiedTopology: true });
+const uri =`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.oawso.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`;
 
 
 //Routes setup
